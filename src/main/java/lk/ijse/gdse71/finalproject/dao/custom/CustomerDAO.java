@@ -6,7 +6,7 @@ import lk.ijse.gdse71.finalproject.dto.CustomerDto;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface  CustomerDAO extends CrudDAO<CustomerDto> {
+public interface  CustomerDAO extends CrudDAO <CustomerDto> {
 
 
 

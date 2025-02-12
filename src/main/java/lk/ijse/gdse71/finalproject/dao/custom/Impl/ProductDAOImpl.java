@@ -92,7 +92,7 @@ public class ProductDAOImpl implements ProductDAO {
               );
     }
 
-    public ArrayList<String> getAll() throws SQLException {
+    public ArrayList<ProductDto> getAll() throws SQLException {
         ResultSet rst = CrudUtil.execute("select product_id from product");
 
         ArrayList<String> productIds = new ArrayList<>();

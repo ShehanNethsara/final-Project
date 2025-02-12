@@ -23,7 +23,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         );
     }
 
-    public  boolean update(EmployeeDto employeeDto) throws SQLException {
+    public   boolean update(EmployeeDto employeeDto) throws SQLException {
 
         return CrudUtil.execute(
                 "update employee set name = ?, address = ?, salary = ?, jobroll=?, contact_number=? where employee_id=?",

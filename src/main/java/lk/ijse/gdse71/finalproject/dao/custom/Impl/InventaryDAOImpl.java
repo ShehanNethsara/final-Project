@@ -42,6 +42,12 @@ public class InventaryDAOImpl implements InventaryDAO {
         return inventaryDtos;
     }
 
+    @Override
+    public boolean save(InventaryDto Dto) throws SQLException {
+        return false;
+    }
+
+
     public boolean delete(String employeeId) throws SQLException {
         return CrudUtil.execute("delete from inventory where inventory_id=?", employeeId);
 

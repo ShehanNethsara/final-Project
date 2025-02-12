@@ -5,9 +5,7 @@ import lk.ijse.gdse71.finalproject.dto.PaymentDto;
 
 import java.sql.SQLException;
 
-public interface PaymentDAO extends CrudDAO {
+public interface PaymentDAO extends CrudDAO <PaymentDto> {
 
-    String getNextPayment() throws SQLException;
 
-     boolean savePayment (PaymentDto paymentDto) throws SQLException;
 }

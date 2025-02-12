@@ -68,4 +68,13 @@ import java.util.ArrayList;
         return "C001";
     }
 
-}
+       @Override
+       public CustomerDto findByCid(String selectedCusId) throws SQLException {
+           return null;
+       }
+
+       @Override
+       public ArrayList<String> getAllCustomerIds() throws SQLException {
+           return null;
+       }
+   }

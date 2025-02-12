@@ -21,7 +21,7 @@ public class OrderDAOImpl implements OrderDAO {
         try {
             connection.setAutoCommit(false);
             System.out.println(paymentDto);
-            boolean isSavePayment = paymentModel.savePayment(paymentDto);
+            boolean isSavePayment = paymentModel.save(paymentDto);
 
             if (isSavePayment) {
                 System.out.println("Payment saved successfully");
