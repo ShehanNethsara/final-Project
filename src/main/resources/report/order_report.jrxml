@@ -1,0 +1,126 @@
+<!-- Enhanced JasperReport Template -->
+<jasperReport name="customer_report" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a3c88b2-a187-4aab-a917-9bd79ea3d8ed">
+	<queryString language="SQL"><![CDATA[SELECT
+    o.order_id,
+    o.customer_id,
+    o.date AS order_date,
+    p.product_id,
+    p.product_name,
+    p.product_price,
+    p.product_qty,
+    (p.product_price * p.product_qty) AS total_price
+FROM
+    orders o
+        JOIN
+    orders op ON o.order_id = op.order_id
+        JOIN
+    product p ON p.product_id = p.product_id
+ORDER BY
+    o.order_id, p.product_id;]]></queryString>
+
+	<!-- Adding new fields -->
+	<field name="qty" class="java.lang.Integer"/>
+	<field name="price" class="java.lang.Double"/>
+	<field name="discount" class="java.lang.Double"/>
+	<field name="total" class="java.lang.Double"/>
+
+	<title height="86" splitType="Stretch">
+		<staticText>
+			<reportElement x="0" y="0" width="550" height="86" forecolor="#000000" backcolor="#FFFFFF" mode="Opaque" horizontalAlignment="Center" verticalAlignment="Middle"/>
+			<textElement textAlignment="Center" verticalAlignment="Middle">
+				<font size="25" isBold="true"/>
+			</textElement>
+			<text><![CDATA[Order Bill]]></text>
+		</staticText>
+	</title>
+
+	<columnHeader height="30" splitType="Stretch">
+		<band height="30">
+			<!-- Column Headers -->
+			<staticText>
+				<reportElement x="0" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Order ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Customer ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Payment ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="0" width="50" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+
+	<detail>
+		<band height="30">
+			<!-- Data Fields -->
+			<textField>
+				<reportElement x="0" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{customer_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{payment_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="50" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{qty} * $F{price} - $F{discount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+
+	<columnFooter>
+		<band height="30">
+			<!-- Totals -->
+			<staticText>
+				<reportElement x="0" y="0" width="350" height="30" horizontalAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Grand Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="0" width="60" height="30" horizontalAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#.##").format($V{Total})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>

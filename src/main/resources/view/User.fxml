@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="userpage" maxHeight="650.0" maxWidth="850.0" minHeight="650.0" minWidth="850.0" prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: #3F51B5;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse71.finalproject.controller.UserController">
+   <children>
+      <AnchorPane layoutX="14.4" layoutY="81.0" style="-fx-background-color: #2161bd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="113.0">
+         <children>
+            <ImageView fitHeight="663.0" fitWidth="850.0" layoutY="-112.8" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-113.0">
+               <image>
+                  <Image url="@../images/GS_AUTO_Welcome_Banner.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="txtUsername" layoutX="250.2" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="322.0" promptText="username" AnchorPane.leftAnchor="250.2" AnchorPane.rightAnchor="250.60000000000014" AnchorPane.topAnchor="300.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPassword" layoutX="284.0" layoutY="357.0" prefHeight="40.0" prefWidth="322.0" promptText="password" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="370.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button layoutX="284.0" layoutY="447.0" mnemonicParsing="false" onAction="#signInOnAction" prefHeight="40.0" prefWidth="322.0" style="-fx-background-color: #407aff; -fx-background-radius: 15;" text="Sign In" textFill="WHITE" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

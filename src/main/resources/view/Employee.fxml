@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="employeePage" prefHeight="650.0" prefWidth="627.0" style="-fx-background-color: #407aff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse71.finalproject.controller.EmployeeController">
+   <children>
+      <Pane prefHeight="313.0" prefWidth="606.0">
+         <children>
+            <Label layoutX="14.0" layoutY="28.0" prefHeight="17.0" prefWidth="111.0" text="Employee ID">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="63.0" prefHeight="17.0" prefWidth="111.0" text="Employee Name">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="98.0" prefHeight="17.0" prefWidth="101.0" text="Address">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtename" layoutX="125.0" layoutY="57.0" prefHeight="28.0" prefWidth="449.0" promptText="name" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txteAddress" layoutX="125.0" layoutY="92.0" prefHeight="28.0" prefWidth="449.0" promptText="Address" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txteSalary" layoutX="125.0" layoutY="127.0" prefHeight="28.0" prefWidth="449.0" promptText="Salary " style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" layoutY="132.0" prefHeight="17.0" prefWidth="101.0" text="Salary ">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtecontact" layoutX="124.0" layoutY="194.0" prefHeight="28.0" prefWidth="449.0" promptText="Contact Number" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="11.0" layoutY="201.0" prefHeight="17.0" prefWidth="101.0" text="Contact Number">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txteJobroll" layoutX="124.0" layoutY="159.0" prefHeight="28.0" prefWidth="449.0" promptText="Job Roll" style="-fx-background-color: #fff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="12.0" layoutY="164.0" prefHeight="17.0" prefWidth="101.0" text="Job Roll">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" layoutX="62.0" layoutY="247.0" prefHeight="27.0" prefWidth="518.0" spacing="30.0">
+               <children>
+                  <Button fx:id="btneReset" layoutX="290.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#resetOnActionEmployee" prefHeight="27.0" prefWidth="98.0" style="-fx-background-color: #FF0000;" text="Reset" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btneDelete" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnDeleteOnActionEmployee" prefWidth="80.0" style="-fx-background-color: #FF0000;" text="Delete" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btneUpdate" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnUpdateOnActionEmployee" prefWidth="80.0" style="-fx-background-color: #aab7b8;" text="Update" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btneSave" layoutX="462.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnSaveOnActionEmployee" prefHeight="27.0" prefWidth="110.0" style="-fx-background-color: #aab7b8;" text="Save">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="lbleid" layoutX="124.0" layoutY="23.0" prefHeight="28.0" prefWidth="449.0" text="E001" />
+         </children>
+      </Pane>
+      <Pane layoutY="325.0" prefHeight="321.0" prefWidth="606.0">
+         <children>
+            <TableView fx:id="tblemployee" layoutX="4.0" onMouseClicked="#onclickemployeetbl" prefHeight="314.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="coleid" prefWidth="104.0" text=" Id" />
+                <TableColumn fx:id="colename" prefWidth="103.20001220703125" text=" Name" />
+                  <TableColumn fx:id="coleaddress" prefWidth="103.20001220703125" text="Address" />
+                  <TableColumn fx:id="colesalary" prefWidth="96.800048828125" text="Salary" />
+                  <TableColumn fx:id="colejobroll" prefWidth="88.79998779296875" text="Job Roll" />
+                  <TableColumn fx:id="coleconnumber" prefWidth="110.4000244140625" text="Con.Number" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
